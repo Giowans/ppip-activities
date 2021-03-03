@@ -8,6 +8,16 @@ const ActivitieOne = () => {
     const [ response, setResponse ] = useState('');
     const [ inputActive, setInputActive ] = useState('');
 
+    const getResult = () => {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                setResponse(xhttp.responseText);
+            }
+        };
+        xhttp.open("GET", `https://tempbackend.000webhostapp.com/?total=${total}&percentage=${percentage}`, true);
+        xhttp.send();
+    }
     return (
         <View style = {estilos.mainContainer}>
             <Text style = {estilos.titulo}>Actividad #1</Text>
@@ -20,13 +30,14 @@ const ActivitieOne = () => {
                     onEndEditing = {() => {
                         setInputActive('');
                     }}
-                    selectionColor = '#DEDA65'
+                    selectionColor = '#A38435'
                     style = {{
                         ...estilos.inputStyle, 
-                        borderColor: inputActive === 'inOne' ? '#DEDA65' : 'black',
+                        borderColor: inputActive === 'inOne' ? '#A38435' : 'black',
                         borderWidth: inputActive === 'inOne' ? 2 : 1
                     }}
                     onChangeText = {(value) => {
+                        setTotal(value);
                         console.log(value);
                     }}
                     placeholder = 'Ingrese Total'
@@ -39,13 +50,14 @@ const ActivitieOne = () => {
                     onEndEditing = {() => {
                         setInputActive('');
                     }}
-                    selectionColor = '#DEDA65'
+                    selectionColor = '#A38435'
                     style = {{
                         ...estilos.inputStyle, 
-                        borderColor: inputActive === 'inTwo' ? '#DEDA65' : 'black',
+                        borderColor: inputActive === 'inTwo' ? '#A38435' : 'black',
                         borderWidth: inputActive === 'inTwo' ? 2 : 1
                     }}
                     onChangeText = {(value) => {
+                        setPercentage(value);
                         console.log(value);
                     }}
                     placeholder = 'Ingrese porcentaje de propina'
@@ -55,7 +67,7 @@ const ActivitieOne = () => {
             <TouchableOpacity
                 style = {estilos.buttonStyle}
                 onPress = {() => {
-                    console.log('Me picaste krnal');
+                    getResult();
                 }} 
             > 
                 <Text>Calcular</Text> 
@@ -63,7 +75,7 @@ const ActivitieOne = () => {
             <Text 
                 style = {{...estilos.subtitulo, color: 'black', marginTop: 20}}
             >
-                Propina a dar: <Text></Text>
+                Propina a dar: <Text style = {{...estilos.subtitulo, color: '#A38435'}}>{response ? `$${response}` : 'Sin Definir'}</Text>
             </Text>
         </View>
     );
@@ -81,7 +93,7 @@ const estilos = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 30,
       paddingBottom: 5,
-      borderBottomColor: '#DEDA65',
+      borderBottomColor: '#A38435',
       borderBottomWidth: 2,
       borderStyle: 'solid'  
     },
@@ -105,14 +117,15 @@ const estilos = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 1,
         paddingHorizontal: 10,
-        paddingVertical: 5
+        paddingVertical: 5,
+        color: 'black'
     },
     buttonStyle: {
         width: 'auto',
         borderRadius: 35,
         paddingHorizontal: 35,
         paddingVertical: 8,
-        backgroundColor: '#DEDA65',
+        backgroundColor: '#A38435',
         marginTop: 30
     }
 
