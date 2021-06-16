@@ -26,6 +26,55 @@ const HomeScreen = ({ navigation }) => {
                 >
                     <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 2 </Text>
                 </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A3')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: 'purple'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 3 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A4')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#0480BE'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 4 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A5')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#FF5733'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 5 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A6')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#A62929'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 6 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A7')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#A66829'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 7 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A8')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#75205B'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 8 </Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    activeOpacity = {0.6}
+                    onPress = {() => navigation.navigate('A9')}
+                    style = {{...homeStyles.buttonHigh, backgroundColor: '#3CC2B1'}}
+                >
+                    <Text style = {{...homeStyles.subtitle, fontWeight: '600', color: 'white'}}> Actividad 9 </Text>
+                </TouchableHighlight>
             </ScrollView>
         </View>
     );

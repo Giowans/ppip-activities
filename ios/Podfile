@@ -8,6 +8,10 @@ target 'Activities' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
+  pod 'RNTextGradientView', :path => '../node_modules/react-native-text-gradient'
+
   target 'ActivitiesTests' do
     inherit! :complete
     # Pods for testing
